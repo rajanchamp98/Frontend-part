@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Accounts from './Components/Accounts';
+import {Routes,Route} from "react-router-dom"
+import Transaction from './Components/Transaction';
+import DistProduct from './Components/DistProduct';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full mt-6">
+      <Routes>
+        <Route path="/" element={<Accounts/>}/>
+        <Route path="/transaction/:id" element={<Transaction/>}/>
+        <Route path="/DistProduct" element={<DistProduct/>}/>
+
+
+      </Routes>
+     
+      
+
+     
     </div>
   );
 }
